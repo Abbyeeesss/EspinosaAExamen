@@ -2,25 +2,43 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="EspinosaAExamen.MainPage"
-             Title="Inicio">
+             Title="Bienvenido a mi Programa"
+             BackgroundColor="#f0f4f8">
 
     <ScrollView>
-        <StackLayout Padding="30" Spacing="20" VerticalOptions="Center">
+        <StackLayout Padding="30" Spacing="25" VerticalOptions="Center" HorizontalOptions="Center">
             <Label Text="Abigail Espinosa"
-                   FontSize="32"
+                   FontSize="36"
+                   FontAttributes="Bold"
+                   TextColor="#334455"
                    HorizontalOptions="Center" />
 
             <Image Source="foto.jpeg"
                    HeightRequest="180"
-                   Aspect="AspectFit" />
+                   Aspect="AspectFit"
+                   Margin="0,10" />
 
             <Button Text="Ir a Chistes"
                     Clicked="OnChistesClicked"
-                    HorizontalOptions="Fill" />
+                    HorizontalOptions="Fill"
+                    Padding="15"
+                    FontAttributes="Bold"
+                    FontSize="18"
+                    BackgroundColor="#4A90E2"
+                    TextColor="White"
+                    CornerRadius="12"
+                    />
 
-            <Button Text="About"
+            <Button Text="Sobre Mi"
                     Clicked="OnAboutClicked"
-                    HorizontalOptions="Fill" />
+                    HorizontalOptions="Fill"
+                    Padding="15"
+                    FontAttributes="Bold"
+                    FontSize="18"
+                    BackgroundColor="#7B61FF"
+                    TextColor="White"
+                    CornerRadius="12"
+                   />
         </StackLayout>
     </ScrollView>
 
