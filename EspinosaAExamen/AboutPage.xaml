@@ -1,24 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="EspinosaAExamen.AboutPage"
              Title="Acerca de mí">
 
     <Grid Padding="20"
-          RowDefinitions="Auto,Auto,Auto,Auto"
+          RowDefinitions="*,*"
           ColumnDefinitions="*,*"
-          RowSpacing="10"
-          ColumnSpacing="10">
+          RowSpacing="15"
+          ColumnSpacing="15">
 
-        <Label Text="Nombre:" Grid.Row="0" Grid.Column="0"/>
-        <Label Text="Abigail Espinosa" Grid.Row="0" Grid.Column="1"/>
+        <StackLayout Grid.Row="0" Grid.Column="0" 
+                     BackgroundColor="LightBlue" 
+                     Padding="10"
+                     VerticalOptions="FillAndExpand">
+            <Label Text="Nombre:" 
+                   FontAttributes="Bold" 
+                   HorizontalOptions="Center"/>
+            <Label Text="Abigail Espinosa" 
+                   HorizontalOptions="Center"
+                   VerticalOptions="CenterAndExpand"/>
+        </StackLayout>
 
-        <Label Text="Nacimiento:" Grid.Row="1" Grid.Column="0"/>
-        <Label Text="01/01/2000" Grid.Row="1" Grid.Column="1"/>
+        <StackLayout Grid.Row="0" Grid.Column="1" 
+                     BackgroundColor="LightGreen" 
+                     Padding="10"
+                     VerticalOptions="FillAndExpand">
+            <Label Text="Nacimiento:" 
+                   FontAttributes="Bold" 
+                   HorizontalOptions="Center"/>
+            <Label Text="17/03/2006" 
+                   HorizontalOptions="Center"
+                   VerticalOptions="CenterAndExpand"/>
+        </StackLayout>
 
-        <Label Text="Intereses:" Grid.Row="2" Grid.Column="0"/>
-        <Label Text="Música, tecnología" Grid.Row="2" Grid.Column="1"/>
+        <StackLayout Grid.Row="1" Grid.Column="0" 
+                     BackgroundColor="LightCoral" 
+                     Padding="10"
+                     VerticalOptions="FillAndExpand">
+            <Label Text="Intereses:" 
+                   FontAttributes="Bold" 
+                   HorizontalOptions="Center"/>
+            <Label Text="Música, tecnología" 
+                   HorizontalOptions="Center"
+                   VerticalOptions="CenterAndExpand"/>
+        </StackLayout>
 
-        <Label Text="Versión:" Grid.Row="3" Grid.Column="0"/>
-        <Label Text="1.0.0" Grid.Row="3" Grid.Column="1"/>
+        <StackLayout Grid.Row="1" Grid.Column="1" 
+                     BackgroundColor="LightYellow" 
+                     Padding="10"
+                     VerticalOptions="FillAndExpand">
+            <Label Text="Versión:" 
+                   FontAttributes="Bold" 
+                   HorizontalOptions="Center"/>
+            <Label Text="1.0.0" 
+                   HorizontalOptions="Center"
+                   VerticalOptions="CenterAndExpand"/>
+        </StackLayout>
     </Grid>
 </ContentPage>

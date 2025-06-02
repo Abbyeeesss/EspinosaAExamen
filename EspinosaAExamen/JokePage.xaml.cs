@@ -4,9 +4,12 @@ namespace EspinosaAExamen
 {
     public partial class JokePage : ContentPage
     {
+        private readonly HttpClient _httpClient;
+
         public JokePage()
         {
             InitializeComponent();
+            _httpClient = new HttpClient();
             LoadJoke();
         }
 
@@ -14,14 +17,35 @@ namespace EspinosaAExamen
         {
             try
             {
-                using var client = new HttpClient();
-                var json = await client.GetStringAsync("https://official-joke-api.appspot.com/random_joke");
-                var joke = JsonSerializer.Deserialize<Joke>(json);
-                JokeLabel.Text = $"{joke.Setup}\n\n{joke.Punchline}";
+                // aqui se mjuesta el cargado mientras se carga el chiste
+                JokeLabel.Text = "Cargando chiste...";
+                RefreshButton.IsEnabled = false;
+
+                var json = await _httpClient.GetStringAsync("https://official-joke-api.appspot.com/random_joke");
+
+                var options = new JsonSerializerOptions
+                {
+                    PropertyNameCaseInsensitive = true
+                };
+
+                var joke = JsonSerializer.Deserialize<Joke>(json, options);
+
+                if (joke != null)
+                {
+                    JokeLabel.Text = $"{joke.Setup}\n\n{joke.Punchline}";
+                }
+                else
+                {
+                    JokeLabel.Text = "No se pudo cargar el chiste.";
+                }
             }
-            catch
+            catch (Exception ex)
             {
-                JokeLabel.Text = "Error al cargar el chiste.";
+                JokeLabel.Text = $"Error al cargar el chiste: {ex.Message}";
+            }
+            finally
+            {
+                RefreshButton.IsEnabled = true;
             }
         }
 
@@ -29,11 +53,17 @@ namespace EspinosaAExamen
         {
             LoadJoke();
         }
+
+        protected override void OnDisappearing()
+        {
+            base.OnDisappearing();
+            _httpClient?.Dispose();
+        }
     }
 
     public class Joke
     {
-        public string Setup { get; set; }
-        public string Punchline { get; set; }
+        public string Setup { get; set; } = string.Empty;
+        public string Punchline { get; set; } = string.Empty;
     }
 }

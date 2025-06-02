@@ -10,7 +10,7 @@
                    FontSize="32"
                    HorizontalOptions="Center" />
 
-            <Image Source="dotnet_bot.png"
+            <Image Source="foto.jpeg"
                    HeightRequest="180"
                    Aspect="AspectFit" />
 
