@@ -1,12 +1,24 @@
-<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="EspinosaAExamen.AboutPage"
-             Title="AboutPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             Title="Acerca de mí">
+
+    <Grid Padding="20"
+          RowDefinitions="Auto,Auto,Auto,Auto"
+          ColumnDefinitions="*,*"
+          RowSpacing="10"
+          ColumnSpacing="10">
+
+        <Label Text="Nombre:" Grid.Row="0" Grid.Column="0"/>
+        <Label Text="Abigail Espinosa" Grid.Row="0" Grid.Column="1"/>
+
+        <Label Text="Nacimiento:" Grid.Row="1" Grid.Column="0"/>
+        <Label Text="01/01/2000" Grid.Row="1" Grid.Column="1"/>
+
+        <Label Text="Intereses:" Grid.Row="2" Grid.Column="0"/>
+        <Label Text="Música, tecnología" Grid.Row="2" Grid.Column="1"/>
+
+        <Label Text="Versión:" Grid.Row="3" Grid.Column="0"/>
+        <Label Text="1.0.0" Grid.Row="3" Grid.Column="1"/>
+    </Grid>
 </ContentPage>

@@ -1,9 +1,10 @@
-namespace EspinosaAExamen;
-
-public partial class AboutPage : ContentPage
+namespace EspinosaAExamen
 {
-	public AboutPage()
-	{
-		InitializeComponent();
-	}
+    public partial class AboutPage : ContentPage
+    {
+        public AboutPage()
+        {
+            InitializeComponent();
+        }
+    }
 }
